@@ -1,26 +1,50 @@
-# Welcome to React Router!
+# AI Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+AI Resume Analyzer is a web application that allows users to upload resumes and receive feedback on formatting, ATS (Applicant Tracking System) compatibility, and job-fit scoring. Built with **React**, **TypeScript**, and **Vite**, it provides an interactive and intuitive interface for analyzing resumes and visualizing results.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- Upload resumes in PDF format
+- Parse and display resume details
+- ATS compatibility checks
+- Resume scoring and visual feedback (gauges, badges, charts)
+- Clean, responsive UI with TailwindCSS
+- Modular architecture for future AI/ML integrations
+
+
+## Tech Stack
+
+- **Frontend:** React, TypeScript, Vite
+- **Styling:** TailwindCSS
+- **Routing:** React Router
+- **Utilities:** pdf.js, custom parsing utilities
+- **Deployment:** Docker support, ready for modern hosting platforms
+
+
+## Project Structure
+
+app/
+├─ components/ # UI components (Uploader, Score visualizations, ResumeCard, etc.)
+├─ routes/ # Application routes (upload, resume, auth, home)
+├─ lib/ # Utility functions (PDF parsing, helpers)
+├─ constants/ # Global constants
+├─ types/ # TypeScript type definitions
+public/ # Icons, images, pdf.js worker
+
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js (>= 18)
+- npm or yarn
+
+
 ### Installation
-
-Install the dependencies:
-
 ```bash
+git clone https://github.com/yourusername/ai-resume-analyzer.git
+cd ai-resume-analyzer
 npm install
 ```
 
@@ -32,7 +56,8 @@ Start the development server with HMR:
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+App will be available at `http://localhost:5173`.
+
 
 ## Building for Production
 
@@ -40,6 +65,7 @@ Create a production build:
 
 ```bash
 npm run build
+npm run preview
 ```
 
 ## Deployment
@@ -49,39 +75,18 @@ npm run build
 To build and run using Docker:
 
 ```bash
-docker build -t my-app .
+docker build -t ai-resume-analyzer .
 
 # Run the container
-docker run -p 3000:3000 my-app
+docker run -p 3000:3000 ai-resume-analyzer
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## Contributing
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+Contributions are welcome! Please open an issue or submit a pull request if you’d like to help improve the project.
 
-### DIY Deployment
+## License
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
+This project is licensed under the MIT License.
 
 Built with ❤️ using React Router.
