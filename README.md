@@ -81,6 +81,22 @@ docker build -t ai-resume-analyzer .
 docker run -p 3000:3000 ai-resume-analyzer
 ```
 
+## Troubleshooting
+
+**PDF Conversion Issue**  
+If you encounter the error:
+
+Failed to convert PDF into an image
+
+The issue is likely due to the `pdfjs-dist` library version.  
+To fix this, change the dependency to version **5.3.93** in your `package.json` and reinstall:
+
+```bash
+npm install pdfjs-dist@5.3.93
+```
+That should resolve the problem.
+
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request if you’d like to help improve the project.
