@@ -20,8 +20,8 @@ export default function Home() {
 
 
     useEffect(() => {
-        if(!auth.isAuthenticated) navigate('/auth?next=/');
-    }, [auth.isAuthenticated])
+        if(!auth.isAuthenticated) navigate('/auth?next=/', { replace: true });
+    }, [auth.isAuthenticated, navigate])
 
     useEffect(() => {
       const loadResumes = async () => {
