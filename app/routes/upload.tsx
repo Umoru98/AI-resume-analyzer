@@ -58,7 +58,7 @@ const upload = () => {
 
         data.feedback = JSON.parse(feedbackText);
         await kv.set(`resume:${uuid}`, JSON.stringify(data));
-        setStatusText('Analysis compleete, redirecting...');
+        setStatusText('Analysis complete, redirecting...');
         console.log(data);
         navigate(`/resume/${uuid}`);
     } 
@@ -86,10 +86,14 @@ const upload = () => {
                 <div className="page-heading py-16">
                     <h1>Smart feedback for your dream job</h1>
                     {isProcessing ? (
-                        <>
-                            <h2>{statusText}</h2>
-                            <img src="/images/resume-scan.gif" className="w-full"/>
-                        </>
+                        <div className="flex flex-col items-center justify-start space-y-2 pt-4">
+                            <h2 className="text-center">{statusText}</h2>
+                            <img
+                                src="/images/resume-scan.gif"
+                                className="w-64 h-64 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain"
+                                alt="Analyzing resume..."
+                            />
+                        </div>
                     ) : (
                         <h2>Drop your resume for an ATS score and improvement tips</h2>
                     )}
